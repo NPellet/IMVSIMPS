@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>IMVS / IMPS Experiments</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+    
+    
+  </head>
+  <body>
+  <div id="container">
+    <h1>IMVS / IMPS</h1>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    
+    <div class="row">
+
+    <div class="col-sm-6">
+
+    
+    <p><span>Last voltage : <span id="lastVoltage"></span>V</span></p>
+    <p><span>Last current : <span id="lastCurrent"></span>mA</span></p>
+    
+    <div id="voltage"></div>
+    <div id="current"></div>
+    </div>
+    <div class="col-sm-6">
+
+    <form class="form" id="form">
+
+
+      <div class="form-group">
+      <label for="voltagesetpoint">Port</label>
+        <input type="text" name="port" class="form-control" id="port" placeholder="">
+      </div>
+
+      <div class="form-group">
+      <label for="voltagesetpoint">Voltage set-point</label>
+
+        <div class="input-group">
+
+        
+        <input type="number" name="voltage" class="form-control" id="voltagesetpoint" placeholder="0">
+         <div class="input-group-addon">V</div>
+         </div>
+      </div>
+
+
+
+      <div class="form-group">
+      <label for="voltagesetpoint">Current set-point</label>
+      <div class="input-group">
+        
+        <input type="number" name="current" class="form-control" id="currentsetpoint" placeholder="0">
+         <div class="input-group-addon">mA</div>
+         </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="voltagesetpoint">Biasing mode</label>
+        <p>
+        <div class="btn-group" role="group" aria-label="">
+
+          <label class="btn btn-default">
+            <input name="mode" value="galvanostat" type="radio">Galvanostat
+          </label>
+          <label class="btn btn-default">
+            <input name="mode" value="potentiostat" type="radio">Potentiostat
+          </label>
+        </div>
+        </p>
+
+        <button type="button" id="update" class="btn btn-primary">Update</button>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+    const jQuery = require("jquery/dist/jquery.min");
+    const $ = jQuery;
+  </script>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</html>
